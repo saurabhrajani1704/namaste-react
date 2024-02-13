@@ -1,0 +1,29 @@
+This is the Assignment 3 of the Namaste React Course By Akshay Saini 
+
+Note: All the solutions are written by me. SO if you find any discrepancy or any mistake do google it as well to get correct and desired results. 
+
+Question 1 : What is JSX ? 
+Answer : JSX is javascript syntax. This syntax primarily used to write React in javascript. This syntax is easier to use as in core react the code gets clumsy so in 
+order to get a clean code we use JSX. 
+Note: JSX and HTML are NOT SAME. JSX is not HTML inside javascript but JSX is simply a JS object that has a syntax similar to HTML. 
+
+Question 2 : What are some superpowers of JSX ? 
+Answer : JSX is a syntax that is similar to HTML but is a JS object. Some of the important superpowers of JSX are as follows: 
+        1: The syntax is developer friendly and clean as compared to core React 
+        2: The syntax is similar to HTML so it is easier to write 
+        3. We can easily create div containers and other nested elements in it without much issue. 
+
+Question 3. What is the role of type attributes in script tag? What options can I use there ? 
+Answer : The type attribute in the script tag is used primarily to specify what kind of script we are using in the script element. We can use mainly 4 values in it : 
+        1: no value or empty string : This indicates that we are using classic Javascript Code in the script tag. 
+        2: importmap: This value indiactes that we use a JSON object in the script tag that is used to control the modules in script tag 
+        3: module : This value causes the code to be treated as a JavaScript module. The processing of the script contents is deferred. 
+
+Question 4: {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX ? 
+
+Answer : {TitleComponent} : This tag allows us to use this TitleComponent a React Element as a JavaScript  object i.e this React element is a JS function and thus 
+            we can use JS in our React Code. 
+         {<TitleComponent/>} : This tag allows us to use this TitleComponent a React Functional Component as a JavaScript  object i.e this React element is a JS function and thus 
+            we can use JS in our React Code. 
+        {<TitleComponent></TitleComponent>}:  This tag allows us to use this TitleComponent a React Functional Component as a JavaScript  object i.e this React element is a JS function and thus 
+            we can use JS in our React Code.

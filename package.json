@@ -4,7 +4,10 @@
   "description": "This is Namaste React course journey covering various aspects of React ",
   
   "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
     "test": "jest"
+
   },
   "repository": {
     "type": "git",
