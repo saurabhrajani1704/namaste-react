@@ -1,0 +1,28 @@
+This is the Assignment 5 of the Namaste React Course By Akshay Saini 
+
+Note: All the solutions are written by me. SO if you find any discrepancy or any mistake do google it as well to get correct and desired results. 
+
+Question 1: What is the difference between Named Export, Default export and * as export?
+Answer : Default Export is primarily used to export a single file from a particular react component. Thus Default Export is used only and only when we have to export a 
+single file from a particular react component. 
+To import a file using default export we use the command as : export default filename;
+
+Named Export is used when we have to export more than one file from a file to a react component. This component is used to more than one file into our react components.
+A file can have more than one named exports. To import/export the file we use the command as : export/import   {filename} from filepath ;. 
+
+* export : if we want to import all of our named export into our file. We can directly use * export to get the desired result. To import/export file using * we write 
+the command as : export/import * as filename from filepath. 
+
+Question 2 : What is the importance of config.js file ?
+Answer : The config.js file is primarily a utility folder that stores all the utilties of our react app i.e all the links all the static and constant data of our react
+app is stored in the config.js file. This is also called as a utils folder. 
+
+Question 3: What are React Hooks?
+Answer : React Hooks are the predefined utility functions that are given to us by React. This hooks are used majorly to dynamically update our data. There are majorly 
+2 hooks that are used in React: useState() and useEffect(). 
+
+Question 4: Why do we need a useState Hook?
+Answer : use State hook is primarily used to dynamically update our state variables. Whenever we use useState we have to pass a value that acts as an intialized value
+and when we update it it gives us the new value. Thus useState automatically re-renders the componet whenever the state variables are updated. These state Hooks keep
+the UI layer and Data Layer of our React App together giving a seamless experience to the user. 
+
