@@ -1,0 +1,23 @@
+This is the Assignment  8of the Namaste React Course By Akshay Saini 
+
+Note: All the solutions are written by me. SO if you find any discrepancy or any mistake do google it as well to get correct and desired results. 
+
+Question 1:How do you create Nested Routes react-router-dom cofiguration ?
+
+Answer: In order to create a route we use the createBrowserRoute method that takes the path and the element to create the route. Now to create
+nested route we add another attribute i.e children that takes the same path and element property to create the nested route in react router 
+dom. 
+
+Question 2:What is the order of life cycle method calls in Class Based Components?
+
+Answer: For Class Based Components the life cycle method order can be described as follows:
+
+1. For One Component: Now here in the class based component, firstly the constructor will be called that will initialise with initial values 
+and render method would fill the component with user enetred values and then the componentDidMount will be called that would mean that the 
+component is mounted on the webage. 
+
+2. For One Parent and One child Component: Now here when one parent and one class component is called firstly the parent constructor then 
+parent render then the child constructor and child render component is called and then when the child component is completely mounted then
+the parent componentDidMount is called to complete the life cycle. 
+
+3. 

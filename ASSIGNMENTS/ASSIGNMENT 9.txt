@@ -1,0 +1,39 @@
+These are thesolutions of the assignment 9 of Namste react by akshay saini 
+All the answers are written so kindly refer to google if found any error 
+
+Question1: When and why do we need lazy()?
+
+Answer: lazy() is a inbuilt function in react.js that is primarily used to split the whole code bundle in to multiple bundles so as to ensure that the code runs smoothly
+and we get the desired result. This also done so as to have less load on the local host file ensuring faster running of code and better error detection if any. 
+
+Question 2:What is suspense?
+
+Answer: Suspense is used primarily to suspend the component that is loading and render the fallback UI. This is done so that there is better user experience as the
+component is loading by lazy loading and we get the error primarily because the componet is not loaded therefore to prevent this error suspense is used. 
+
+Question 3: Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator.
+To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+
+Answer: Now this error is primarily because the component is still loading and we have rendered out the whole component. This happens because the component is under 
+lazy loading. Now Suspense is used to resoslve this error as this gives the fallback UI which ensures that the user is not seeing any blank screen while the component
+is loading. when the componet is loaded the fallback UI is replaced the original content of the componet ensuring that the user experience remains smooth. 
+
+Question 4: Advantages and disadvantages of using this code splitting pattern?
+
+Answer: Advantages: 
+1. Ensures that the code runs faster 
+2. Decrease the laod on a single file 
+3. ensures that the file loads those components that the user needs currently 
+4. smooth user experience 
+5. better usage of memeory and computer resources. 
+
+Disadvantages: 
+1. increased complexity 
+2. more testing proccess in development phases 
+3. increased size of bundles by additional code and dependencies. 
+
+Question 5. When do we and why do we need suspense?
+Answer: Suspense is needed primarily in order to ensure the smooth UI experience while the code is lazy loading. This method is used with the fallback UI which ensures that the user is not seeing any blank screen while the component
+is loading. when the componet is loaded the fallback UI is replaced the original content of the componet ensuring that the user experience remains smooth. 
+
+

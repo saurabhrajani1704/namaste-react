@@ -2,12 +2,10 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is Namaste React course journey covering various aspects of React ",
-  
   "scripts": {
     "start": "parcel index.html",
-    "build":"parcel build index.html",
+    "build": "parcel build index.html",
     "test": "jest"
-
   },
   "repository": {
     "type": "git",
@@ -22,11 +20,13 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.11.0",
-    "process": "^0.11.10"
+    "postcss": "^8.4.38",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
   }
 }
-
