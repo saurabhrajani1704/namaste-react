@@ -3,7 +3,11 @@ import {useState,useEffect}from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+
+
 const Body = ()=> {
+
+    
 
     //Local State Variables - Super Powerful Variable 
     const [listofRestaurants,setListOfRestaurant]=useState([]);
@@ -23,8 +27,8 @@ const Body = ()=> {
     const fetchData = async () => {
         const data = await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6989703&lng=77.1387225&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-
         const json= await data.json();
+        console.log(data);
 
        
         //Optional Chaining 
@@ -45,10 +49,18 @@ const Body = ()=> {
     if(listofRestaurants.length===0){
         return <Shimmer />
     }
+
+    if(filteredRestaurant.length===0){
+        return(
+            <h1> No Restaurants Found</h1>
+        )
+    }
+
+
     return (
      <div className="body">
         <h1 className="mt-12 ml-5 font-bold text-2xl"> Search for your favourite Restaurants</h1>
-            <div className="filter flex flex-row">
+            <div className="filter flex flex-row justify-between">
                 <div className="search m-4 p-4">
                     <input 
                         type="text" 
@@ -70,20 +82,77 @@ const Body = ()=> {
                         
                     }}>Search</button>
                 </div>
-                <div className="search px-4 py-2 mt-9">
-                    <button 
-                        className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec]" 
-                        onClick={() => {
-                            setListOfRestaurant()
-                            //Filter Logic Here 
-                            const filteredList=listofRestaurants.filter(
-                                (res)=>res.info.avgRating > 4
-                            );
-                            setListOfRestaurant(filteredList);
-                            }}
-                    >
-                        Top Rated Restaurants 
-                    </button>
+                <div>
+                    <div className="search px-4 py-2 mt-9">
+                        <button 
+                            className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec]" 
+                            onClick={() => {
+                                setListOfRestaurant()
+                                //Filter Logic Here 
+                                const filteredList=listofRestaurants.filter(
+                                    (res)=>res.info.avgRating > 4
+                                );
+                                setListOfRestaurant(filteredList);
+                                }}
+                        >
+                            Ratings 4+
+                        
+                        </button>
+                        <button
+                        className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec] ml-2" 
+                            onClick={() => {
+                                setListOfRestaurant()
+                                //Filter Logic Here 
+                                const filteredList=listofRestaurants.filter(
+                                    (res)=>res.info.sla.deliveryTime < 40
+                                );
+                                setListOfRestaurant(filteredList);
+                                }}
+                        >
+                            Fast Delivery
+                        </button>
+                        <button
+                            className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec] mx-2" 
+                            onClick={() => {
+                                setListOfRestaurant()
+                                //Filter Logic Here 
+                                const filteredList=listofRestaurants.filter(
+                                    (res)=>res.info.costForTwo < 300
+                                );
+                                setListOfRestaurant(filteredList);
+                                }}
+                        
+                        >
+                            Less Than 300
+                        </button>
+                        <button
+                            className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec]" 
+                            onClick={() => {
+                                setListOfRestaurant()
+                                //Filter Logic Here 
+                                const filteredList=listofRestaurants.filter(
+                                    (res)=>300 <res.info.costForTwo < 600
+                                );
+                                setListOfRestaurant(filteredList);
+                                }}
+                        
+                        >
+                            Between 300 and 600
+                        </button>
+                        <button 
+                            className="px-4 py-2 text-white bg-black rounded-xl hover:bg-[#87acec] ml-2" 
+                            onClick={() => {
+                                setListOfRestaurant()
+                                //Filter Logic Here
+                                const filteredList=listofRestaurants
+                                setListOfRestaurant(filteredList);
+                                }}
+                        >
+                            Reset
+                        
+                        </button>
+                    </div>
+
                 </div> 
         </div>
         

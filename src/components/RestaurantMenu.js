@@ -6,6 +6,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu= () =>{
 
     const {resId}=useParams();
+    const [showIndex,setShowIndex]=useState(0);
     
 
     const resInfo=useRestaurantMenu(resId);
@@ -28,12 +29,26 @@ const RestaurantMenu= () =>{
         );
 
     return(
-        <div className="text-center">
-            <h1 className="font-bold text-2xl my-6 ">{name.name}</h1>
-            <p className="font-bold text-lg">{name.cuisines.join(", ")} - {name.costForTwoMessage}</p>
+        <div>
+            <h1 className="font-bold text-2xl my-6 ml-96 ">{name.name}</h1>
+            <div className="rounded-2xl border-gray-300 border-2 w-[730px] h-40 ml-96 shadow-xl p-4">
+                <p className="mb-1 text-base">⭐ {name.avgRating} • ({name.totalRatingsString}) • {name.costForTwoMessage} </p>
+                <p className="mb-2 font-bold text-lg">{name.cuisines.join(", ")}</p>
+                <p className="mb-2 font-medium text-sm">Outlet: {name.areaName}</p>
+                <p className=" mb-2 font-medium text-sm">Delivery Time : {name.sla.deliveryTime} mins</p>
+
+            </div>
+           
             {/*accordion building*/}
-            {categories.map((category) => (
-                <RestaurantCategory data={category?.card?.card} />
+            {categories.map((category,index) => (
+                //controlled components
+                <RestaurantCategory 
+                    key={category?.card?.card.title}
+                    data={category?.card?.card}
+                    showItems={index===showIndex ? true : false}
+                    setShowIndex={() => setShowIndex(index)} 
+
+                />
             ))}
         </div>
     );
